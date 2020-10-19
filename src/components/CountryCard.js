@@ -67,7 +67,6 @@ return (
         <CardMedia
         className={classes.media}
         image={country.country_flag}
-        onClick={() => clickAction(country)}
         title="Country Flag"
         />
         <CardContent>
@@ -77,7 +76,9 @@ return (
         </CardContent>
         <CardActions disableSpacing>
             <IconButton aria-label="add to favorites">
-                <FavoriteIcon />
+                <FavoriteIcon 
+                    onClick={() => clickAction(country)}
+                />
             </IconButton>
             {/* <IconButton aria-label="share">
                 <ShareIcon />
@@ -97,15 +98,15 @@ return (
             <CardContent>
                 <Typography variant="h5">Closed Exceptions:</Typography>
                 <Typography paragraph>
-                {country.closed_exceptions.join('; ')}
+                    {country.closed_exceptions.join('; ')}
                 </Typography>
                 <Typography variant="h5">Travel Requirements:</Typography>
                 <Typography paragraph>
-                {country.international_travel_requirements.join('; ')}
+                    {country.international_travel_requirements.join('; ')}
                 </Typography>
                 <Typography variant="h5">Travel Notes:</Typography>
                 <Typography paragraph>
-                {country.international_travel_note.join('; ')}
+                    {country.international_travel_note.join('; ')}
                 </Typography>
             </CardContent>
         </Collapse>

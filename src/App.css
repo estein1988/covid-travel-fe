@@ -2,6 +2,8 @@
   text-align: center;
 }
 
+.leaflet-container { margin: 5rem; width: 90vw;  height: 90vh; }
+
 .cards-container{
   display: flex;
   flex-direction: row;
