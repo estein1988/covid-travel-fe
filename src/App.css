@@ -2,6 +2,42 @@
   text-align: center;
 }
 
+.cards-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.country-cards{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 1rem;
+  margin: 1.5rem;
+  justify-content: center;
+}
+
+.favorites-countries {
+  overflow-x: scroll;
+  min-height: 200px;
+  max-width: 100%;
+}
+
+.ui.grid > .row.favorites-countries-row {
+  flex-wrap: nowrap;
+  min-height: 100%;
+}
+
+.ui.grid {
+  padding: 0px 20px;
+}
+
+.ui-one-column-grid {
+  margin: 10px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
