@@ -1,26 +1,27 @@
 import React, { Component } from 'react';
 import MapView from './components/MapView';
 import FavoritesCountries from './components/FavoritesCountries'
-// import SearchByName from './components/SearchByName'
-import SearchByStatus from './components/SearchByStatus'
+import SearchBy from './components/SearchBy'
 import CardsContainer from './components/CardsContainer'
+import LatLongSearch from './components/LatLongSearch'
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 import './App.css';
+import {Link} from 'react-router-dom'
 class App extends Component {
   
   state = {
     countries: [],
     favoritesCountries: [],
-    selectedNames: [],
-    selectedStatus: []
+    filteredCountries: [],
+    searchName: "",
+    searchStatus: ""
   }
 
   componentDidMount(){
     fetch('http://127.0.0.1:3000/travels')
       .then(response => response.json())
       .then(countryData => {
-        this.setState({countries: countryData})
-        this.setState({selectedNames: countryData})
-        this.setState({selectedStatus: countryData})
+        this.setState( {countries: countryData, filteredCountries: countryData} )
       })
   }
 
@@ -38,35 +39,58 @@ class App extends Component {
     }
   }
 
-  // filterNames = (event) => {
-  //   const input = event.target.value
-  //   const filteredCountries = this.state.countries 
-  //   .filter(
-  //     country => country.country_name.toLowerCase().includes(input.toLowerCase())
-  //   )
-  //   this.setState({selectedNames: filteredCountries})
-  // }
+  filterCountries = (userSearchInput) => {
+    const {searchName, searchStatus} = this.state
 
-  filterStatus = (event) => {
-    const input = event.target.value
-    const filteredStatus = this.state.countries 
-    .filter(
-      country => country.current_status.toLowerCase().includes(input.toLowerCase())
+    const countriesFilter = this.state.countries.filter(
+      country => country.country_name.toLowerCase().includes(searchName.toLowerCase()) && country.current_status.toLowerCase().includes(searchStatus.toLowerCase()) 
     )
-    this.setState({selectedStatus: filteredStatus})
+    this.setState({filteredCountries: countriesFilter})
+  }
+
+  captureSearchField = (event) => {
+    const {name, value} = event.target
+    this.setState({[name]: value})
+  }
+
+  componentDidUpdate(previousProps, previousState){
+    console.log('previousState', previousState)
+    console.log('this.state', this.state)
+    if (previousState.searchName !== this.state.searchName || previousState.searchStatus !== this.state.searchStatus) {
+      console.log('if')
+      this.filterCountries()
+    }
   }
 
   render(){
-  return (
-    <div className="App">
-      <MapView/>
-      <FavoritesCountries clickAction={this.removeFromFavoritesCountries} favoritesCountries={this.state.favoritesCountries}/>
-      {/* <SearchByName filterNames={this.filterNames} /> */}
-      <SearchByStatus filterStatus={this.filterStatus} />
-      <CardsContainer clickAction={this.addToFavoritesCountries} allCountries={this.state.selectedStatus} />
-    </div>
-  )}
+    
+
+    return (
+      <Router>
+
+        <div className="App">
+          <Route exact path='/'>
+            <FavoritesCountries clickAction={this.removeFromFavoritesCountries} favoritesCountries={this.state.favoritesCountries}/>
+            <SearchBy name='Name' captureSearchField={this.captureSearchField} />
+            <SearchBy name='Status' captureSearchField={this.captureSearchField} />
+            <CardsContainer clickAction={this.addToFavoritesCountries} allCountries={this.state.filteredCountries} />
+          </Route>
+          
+          <Route path='/map'>
+            <Link to='/'>Home</Link>
+            <MapView />
+          </Route>
+
+          <Route path='/lat_long' render={(props) => <LatLongSearch {...props} />} />
+
+          {/* <Route path='/lat_long'>
+            <LatLongSearch/>
+          </Route> */}
+        </div>
+
+      </Router>
+    )
+  }
 }
 
 export default App;
-

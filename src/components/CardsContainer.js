@@ -10,6 +10,7 @@ class CardsContainer extends Component {
         key={country.id}
         country={country}
         clickAction={this.props.clickAction}
+        filter={this.props.filterCountries}
     />
     )
 
