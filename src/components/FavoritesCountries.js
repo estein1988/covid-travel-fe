@@ -8,7 +8,7 @@ class FavoritesCountries extends Component {
 
     const renderFavoritesCountries = () => this.props.favoritesCountries.map(
         country => <CountryCard
-        key={country.name}
+        key={country.id}
         country={country}
         clickAction={this.props.clickAction}
     />

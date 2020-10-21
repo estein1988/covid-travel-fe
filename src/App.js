@@ -7,6 +7,7 @@ import LatLongSearch from './components/LatLongSearch'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 import './App.css';
 import {Link} from 'react-router-dom'
+import 'semantic-ui-css/semantic.min.css'
 class App extends Component {
   
   state = {
@@ -54,39 +55,50 @@ class App extends Component {
   }
 
   componentDidUpdate(previousProps, previousState){
-    console.log('previousState', previousState)
-    console.log('this.state', this.state)
     if (previousState.searchName !== this.state.searchName || previousState.searchStatus !== this.state.searchStatus) {
-      console.log('if')
       this.filterCountries()
     }
   }
 
   render(){
-    
-
     return (
       <Router>
 
         <div className="App">
-          <Route exact path='/'>
-            <FavoritesCountries clickAction={this.removeFromFavoritesCountries} favoritesCountries={this.state.favoritesCountries}/>
-            <SearchBy name='Name' captureSearchField={this.captureSearchField} />
-            <SearchBy name='Status' captureSearchField={this.captureSearchField} />
-            <CardsContainer clickAction={this.addToFavoritesCountries} allCountries={this.state.filteredCountries} />
-          </Route>
-          
-          <Route path='/map'>
-            <Link to='/'>Home</Link>
-            <MapView />
-          </Route>
 
-          <Route path='/lat_long' render={(props) => <LatLongSearch {...props} />} />
-
-          {/* <Route path='/lat_long'>
-            <LatLongSearch/>
-          </Route> */}
+        <div class="ui inverted segment">
+          <div class="ui inverted secondary pointing menu">
+            <div class="header item">
+              <i class="home icon"></i>
+              <Link to='/'>Home</Link>
+            </div>
+            <div class="header item">
+              <i class="map marker alternate icon"></i>
+              <Link to='/lat_long'>Map</Link>
+            </div>
+          </div>
         </div>
+
+        <Route exact path='/'>
+          <FavoritesCountries clickAction={this.removeFromFavoritesCountries} favoritesCountries={this.state.favoritesCountries}/>
+          <SearchBy name='Name' captureSearchField={this.captureSearchField} />
+          <SearchBy name='Status' captureSearchField={this.captureSearchField} />
+          <CardsContainer clickAction={this.addToFavoritesCountries} allCountries={this.state.filteredCountries} />
+        </Route>
+        
+        {/* <Route path='/map'>
+
+        <MapView />
+        </Route> */}
+
+        {/* <Route path='/lat_long' render={(props) => < LatLongSearch {...props} />} /> */}
+
+        <Route path='/lat_long'>
+          <LatLongSearch />
+          <MapView />
+        </Route>
+
+      </div>
 
       </Router>
     )
