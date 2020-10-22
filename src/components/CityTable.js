@@ -17,11 +17,15 @@ class CityTable extends Component {
             .then(data => this.setState({covidData: data}))
     }
 
-    showCovidData = () => this.state.covidData.map(data => <CityTableCard key={data.id} data={data}/>)
+    showCovidData = () => this.state.covidData.map(data => 
+        <CityTableCard 
+            key={data.id} 
+            data={data}
+        />
+    )
 
     render(){
         return (
-
             <div>
                 <h1>United Stats Statistics: January 22nd, 2020 - October 21, 2020</h1>
                 {this.showCovidData()}

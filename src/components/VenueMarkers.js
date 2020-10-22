@@ -13,7 +13,7 @@ const VenueMarkers = (props) => {
     >
         <MarkerPopup data={country}/>
     </Marker>
-    ));  
+    )) 
     return <Fragment>{markers}</Fragment>};
     
 export default VenueMarkers;
