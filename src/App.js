@@ -4,6 +4,7 @@ import FavoritesCountries from './components/FavoritesCountries'
 import SearchBy from './components/SearchBy'
 import CardsContainer from './components/CardsContainer'
 import LatLongSearch from './components/LatLongSearch'
+import CityTable from './components/CityTable'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 import './App.css';
 import {Link} from 'react-router-dom'
@@ -66,14 +67,14 @@ class App extends Component {
 
         <div className="App">
 
-        <div class="ui inverted segment">
-          <div class="ui inverted secondary pointing menu">
-            <div class="header item">
-              <i class="home icon"></i>
+        <div className="ui inverted segment">
+          <div className="ui inverted secondary pointing menu">
+            <div className="header item">
+              <i className="home icon"></i>
               <Link to='/'>Home</Link>
             </div>
-            <div class="header item">
-              <i class="map marker alternate icon"></i>
+            <div className="header item">
+              <i className="map marker alternate icon"></i>
               <Link to='/lat_long'>Map</Link>
             </div>
           </div>
@@ -96,6 +97,10 @@ class App extends Component {
         <Route path='/lat_long'>
           <LatLongSearch />
           <MapView />
+        </Route>
+
+        <Route path='/table'>
+          <CityTable />
         </Route>
 
       </div>
