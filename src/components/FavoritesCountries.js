@@ -8,10 +8,10 @@ class FavoritesCountries extends Component {
 
     const renderFavoritesCountries = () => this.props.favoritesCountries.map(
         country => <CountryCard
-        key={country.id}
-        country={country}
-        clickAction={this.props.clickAction}
-    />
+            key={country.id}
+            country={country}
+            clickAction={this.props.clickAction}
+        />
     )
         return (
             <div className="ui segment inverted blue favorites-countries">

@@ -57,43 +57,43 @@ class LatLongSearch extends Component {
     const renderCoodinateResults = () => this.state.geoCodeCoorindates.map(location => <GeoCard
         key={location.id}
         location={location}
-    />
-    )
+    />)
 
-    return (
-        <div className="LatLongSearch">
-        
-        <div>
-            <form onSubmit={this.handleSubmit}> 
-                <div class="field">
-                    <label>City:</label>
-                    <input type="text" name="location" value={this.state.location} onChange={this.handleChangeText}/>
-                    <input class="ui button" type="submit" />
+        return (
+            <div className="LatLongSearch">
+            
+            <div>
+                <form onSubmit={this.handleSubmit}> 
+                    <div class="field">
+                        <label>City:</label>
+                        <input type="text" name="location" value={this.state.location} onChange={this.handleChangeText}/>
+                        <input class="ui button" type="submit" />
+                    </div>
+                </form>
+                {renderCoodinateResults()}
+            </div>
+
+            <form className="ui.form" onSubmit={this.handleSubmit}>
+
+                <div className="field">
+                    <label>Latitude: </label>
+                    <input type="text" name="latitude" value={this.state.latitude} onChange={this.handleChange} />
                 </div>
+
+                <div className="field">
+                    <label>Longitude:</label>
+                    <input type="number" name="longtitude" value={this.state.longtitude} onChange={this.handleChange} />
+                </div>
+
+                <input className="ui button" type="submit" />
             </form>
-            {renderCoodinateResults()}
-        </div>
 
-        <form className="ui.form" onSubmit={this.handleSubmit}>
+            <h1>Current Active Cases: {this.state.covid.active}</h1> 
+            <h1>Current Active Deaths: {this.state.covid.deaths}</h1> 
 
-            <div className="field">
-                <label>Latitude: </label>
-                <input type="text" name="latitude" value={this.state.latitude} onChange={this.handleChange} />
             </div>
-
-            <div className="field">
-                <label>Longitude:</label>
-                <input type="number" name="longtitude" value={this.state.longtitude} onChange={this.handleChange} />
-            </div>
-
-            <input className="ui button" type="submit" />
-        </form>
-
-        <h1>Current Active Cases: {this.state.covid.active}</h1> 
-        <h1>Current Active Deaths: {this.state.covid.deaths}</h1> 
-
-        </div>
-    )}
+        )
+    }
 }
 
 export default LatLongSearch;

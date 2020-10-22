@@ -23,6 +23,7 @@ class CityTable extends Component {
         return (
 
             <div>
+                <h1>United Stats Statistics: January 22nd, 2020 - October 21, 2020</h1>
                 {this.showCovidData()}
             </div>
         )

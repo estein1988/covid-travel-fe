@@ -10,6 +10,7 @@ const MarkerPopup = ({data}) => {
             <h6>Days Required To Quarantine: {data.days_to_quarantine}</h6>
         </div>
     </Popup>
-    );
-};
+    )
+}
+
 export default MarkerPopup;
