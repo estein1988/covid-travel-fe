@@ -65,9 +65,11 @@ class LatLongSearch extends Component {
             <div>
                 <form onSubmit={this.handleSubmit}> 
                     <div class="field">
-                        <label>City:</label>
-                        <input type="text" name="location" value={this.state.location} onChange={this.handleChangeText}/>
-                        <input class="ui button" type="submit" />
+                        <label>Coordinate Lookup by City / Address / Place :</label>
+                            <input type="text" name="location" value={this.state.location} onChange={this.handleChangeText}/>
+                        <div>
+                            <input class="ui button" type="submit" value="Lookup Coordinates" />
+                        </div>
                     </div>
                 </form>
                 {renderCoodinateResults()}
@@ -85,11 +87,11 @@ class LatLongSearch extends Component {
                     <input type="number" name="longtitude" value={this.state.longtitude} onChange={this.handleChange} />
                 </div>
 
-                <input className="ui button" type="submit" />
+                <input className="ui button" type="submit" value="Lookup Current Cases"/>
             </form>
 
-            <h1>Current Active Cases: {this.state.covid.active}</h1> 
-            <h1>Current Active Deaths: {this.state.covid.deaths}</h1> 
+            <h3>Current Active Cases: {this.state.covid.active}</h3> 
+            <h3>Current Deaths Reported: {this.state.covid.deaths}</h3> 
 
             </div>
         )

@@ -75,7 +75,7 @@ class App extends Component {
               <Link to='/'>Home</Link>
             </div>
             <div className="header item">
-              <i className="map marker alternate icon"></i>
+              <i className="map signs icon"></i>
               <Link to='/cards'>Country Cards</Link>
             </div>
             <div className="header item">

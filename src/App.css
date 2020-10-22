@@ -16,7 +16,11 @@
   width: 1500px;
 }
 
-.leaflet-container { margin: 5rem; width: 90vw;  height: 90vh; }
+.leaflet-container { 
+  margin: 1rem; 
+  width: 97vw;
+  height: 97vh; 
+}
 
 .cards-container {
   display: flex;
@@ -55,8 +59,8 @@
 }
 
 .field{
-  padding: 0.5rem;
-  font-size: 20px;
+  padding: 0.7rem;
+  font-size: 16px;
 }
 
 .button{
