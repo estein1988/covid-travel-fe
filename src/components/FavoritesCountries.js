@@ -13,16 +13,15 @@ class FavoritesCountries extends Component {
         clickAction={this.props.clickAction}
     />
     )
-
-    return (
-        <div className="ui segment inverted blue favorites-countries">
-        <div className="ui five column grid">
-            <div className="row favorites-countries-row">
-            {renderFavoritesCountries()}
-        </div>
-        </div>
-        </div>
-    );
+        return (
+            <div className="ui segment inverted blue favorites-countries">
+                <div className="ui five column grid">
+                    <div className="row favorites-countries-row">
+                        {renderFavoritesCountries()}
+                    </div>
+                </div>
+            </div>
+        )
     }
 }
 

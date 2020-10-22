@@ -1,14 +1,42 @@
-import React, { Component } from 'react'
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
 
-class GeoCard extends Component {
+const useStyles = makeStyles({
+    root: {
+        minWidth: 275,
+    },
+    title: {
+        fontSize: 18,
+    },
+});
 
-    render() {
-
+export default function GeoCard({location}) {
+    const classes = useStyles();
     return (
-        <div>
-            <h5>{this.props.location.place_name} : {this.props.location.center[1]}, {this.props.location.center[0]}</h5>
-        </div>
-    )}
+    <div className="geoCards">
+        <Card className={classes.root} variant="outlined">
+            <CardContent>
+                <Typography className={classes.title} color="textSecondary" gutterBottom>
+                </Typography>
+                <Typography variant="h5" component="h2">
+                    {location.place_name}
+                </Typography>
+                <Typography className={classes.pos} component="h6" color="textSecondary">
+                {location.center[1]}{', '}{location.center[0]}
+                </Typography>
+                <Typography variant="body2" component="h6">
+                <br />
+                </Typography>
+            </CardContent>
+        </Card>
+    </div>
+    )
 }
 
-export default GeoCard
+
+// /* <h3 class="header">{this.props.location.place_name} </h3>
+//                 <p class="header">{this.props.location.center[1]} </p>
+//                 <p class="header">{this.props.location.center[0]} </p>

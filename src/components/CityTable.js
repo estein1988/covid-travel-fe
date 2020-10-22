@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import CityTableCard from '../components/CityTableCard'
-
 class CityTable extends Component {
 
     state = {
@@ -21,11 +20,14 @@ class CityTable extends Component {
     showCovidData = () => this.state.covidData.map(data => <CityTableCard key={data.id} data={data}/>)
 
     render(){
-    return (
-        <div>
-            {this.showCovidData()}
-        </div>
-    )}
+        return (
+
+            <div>
+                {this.showCovidData()}
+            </div>
+        )
+    }
 }
 
 export default CityTable;
+

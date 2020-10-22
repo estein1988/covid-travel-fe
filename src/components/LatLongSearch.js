@@ -74,19 +74,19 @@ class LatLongSearch extends Component {
             {renderCoodinateResults()}
         </div>
 
-        <form class="ui.form" onSubmit={this.handleSubmit}>
+        <form className="ui.form" onSubmit={this.handleSubmit}>
 
-            <div class="field">
+            <div className="field">
                 <label>Latitude: </label>
                 <input type="text" name="latitude" value={this.state.latitude} onChange={this.handleChange} />
             </div>
 
-            <div class="field">
+            <div className="field">
                 <label>Longitude:</label>
                 <input type="number" name="longtitude" value={this.state.longtitude} onChange={this.handleChange} />
             </div>
 
-            <input class="ui button" type="submit" />
+            <input className="ui button" type="submit" />
         </form>
 
         <h1>Current Active Cases: {this.state.covid.active}</h1> 

@@ -2,9 +2,23 @@
   text-align: center;
 }
 
+.header-title{
+  background-color: black;
+  color: white;
+  font-size: 60px;
+  padding-top: 60px;
+  margin: 0px;
+  font-family: 'Lato', sans-serif;
+}
+
+.cover-photo{
+  height: 680px;
+  width: 1500px;
+}
+
 .leaflet-container { margin: 5rem; width: 90vw;  height: 90vh; }
 
-.cards-container{
+.cards-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

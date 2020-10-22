@@ -9,6 +9,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom'
 import './App.css';
 import {Link} from 'react-router-dom'
 import 'semantic-ui-css/semantic.min.css'
+import coverphoto from '../src/assets/coverphoto.jpg'
 class App extends Component {
   
   state = {
@@ -75,24 +76,30 @@ class App extends Component {
             </div>
             <div className="header item">
               <i className="map marker alternate icon"></i>
+              <Link to='/cards'>Country Cards</Link>
+            </div>
+            <div className="header item">
+              <i className="map marker alternate icon"></i>
               <Link to='/lat_long'>Map</Link>
+            </div>
+            <div className="header item">
+              <i className="th list icon"></i>
+              <Link to='/table'>Table</Link>
             </div>
           </div>
         </div>
 
         <Route exact path='/'>
+          <h1 className="header-title">Travel the World With Confidence</h1>
+          <img className="cover-photo" src={coverphoto} alt="" />
+        </Route>
+
+        <Route exact path='/cards'>
           <FavoritesCountries clickAction={this.removeFromFavoritesCountries} favoritesCountries={this.state.favoritesCountries}/>
           <SearchBy name='Name' captureSearchField={this.captureSearchField} />
           <SearchBy name='Status' captureSearchField={this.captureSearchField} />
           <CardsContainer clickAction={this.addToFavoritesCountries} allCountries={this.state.filteredCountries} />
         </Route>
-        
-        {/* <Route path='/map'>
-
-        <MapView />
-        </Route> */}
-
-        {/* <Route path='/lat_long' render={(props) => < LatLongSearch {...props} />} /> */}
 
         <Route path='/lat_long'>
           <LatLongSearch />
