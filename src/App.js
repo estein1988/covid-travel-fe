@@ -75,12 +75,12 @@ class App extends Component {
               <Link to='/'>Home</Link>
             </div>
             <div className="header item">
-              <i className="map signs icon"></i>
-              <Link to='/cards'>Country Cards</Link>
-            </div>
-            <div className="header item">
               <i className="map marker alternate icon"></i>
               <Link to='/lat_long'>Map</Link>
+            </div>
+            <div className="header item">
+              <i className="map signs icon"></i>
+              <Link to='/cards'>Country Cards</Link>
             </div>
             <div className="header item">
               <i className="th list icon"></i>
@@ -90,7 +90,7 @@ class App extends Component {
         </div>
 
         <Route exact path='/'>
-          <h1 className="header-title">Travel the World With Confidence</h1>
+          <h1 className="header-title">OpenCountries</h1>
           <img className="cover-photo" src={coverphoto} alt="" />
         </Route>
 
@@ -102,8 +102,8 @@ class App extends Component {
         </Route>
 
         <Route path='/lat_long'>
-          <LatLongSearch />
           <MapView />
+          <LatLongSearch />
         </Route>
 
         <Route path='/table'>
