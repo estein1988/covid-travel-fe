@@ -3,7 +3,7 @@ import CityTableCard from '../components/CityTableCard'
 class CityTable extends Component {
 
     state = {
-        covidData: [],
+        covidData: []
     }
 
     componentDidMount(){

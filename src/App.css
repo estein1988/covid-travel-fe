@@ -92,3 +92,13 @@
   color: white;
 }
 
+.LatLongSearch{
+  align-items: center;
+  margin: 1rem;
+  padding: 0.5rem;
+  border: 1.75px solid black
+}
+
+.ui-centered-card {
+  background: lightgray
+}

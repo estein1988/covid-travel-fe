@@ -16,7 +16,7 @@ class MapView extends Component {
         .then(response => response.json())
         .then(countryData => this.setState({countries: countryData}))
     }
-        
+
     render() {
         return (
             <Map 

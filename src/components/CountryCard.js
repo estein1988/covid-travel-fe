@@ -52,7 +52,7 @@ export default function CountryCard({country, clickAction}) {
                 <CardHeader
                 avatar={
                     <Avatar aria-label="country-cards" className={classes.avatar}>
-                    {country.country_name.charAt(0)}
+                        {country.country_name.charAt(0)}
                     </Avatar>
                 }
                 action={
