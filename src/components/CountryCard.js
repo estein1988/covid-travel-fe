@@ -10,6 +10,7 @@ import Collapse from '@material-ui/core/Collapse';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
+import { green } from '@material-ui/core/colors';
 import { red } from '@material-ui/core/colors';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
@@ -17,7 +18,7 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        maxWidth: 345,
+        maxWidth: 275,
     },
     media: {
         height: 0,
@@ -36,10 +37,14 @@ const useStyles = makeStyles((theme) => ({
     avatar: {
         backgroundColor: red[500],
     },  
+    greenAvatar: {
+        backgroundColor: green[500],
+    },  
 }))
 
 export default function CountryCard({country, clickAction}) {
     const classes = useStyles();
+
     const [expanded, setExpanded] = React.useState(false);
 
     const handleExpandClick = () => {
@@ -51,7 +56,7 @@ export default function CountryCard({country, clickAction}) {
             <Card className={classes.root}>
                 <CardHeader
                 avatar={
-                    <Avatar aria-label="country-cards" className={classes.avatar}>
+                    <Avatar aria-label="country-cards" className={country.current_status === 'open' ? classes.greenAvatar : classes.avatar}>
                         {country.country_name.charAt(0)}
                     </Avatar>
                 }
