@@ -27,7 +27,7 @@ class CityTable extends Component {
     render(){
         return (
             <div>
-                <h1>United Stats Statistics: January 22nd, 2020 - October 21, 2020</h1>
+                <h1>United Stats Covid Statistics</h1>
                 {this.showCovidData()}
             </div>
         )

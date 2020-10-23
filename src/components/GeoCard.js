@@ -21,7 +21,7 @@ const classes = useStyles()
                 <CardContent>
                     <Typography className={classes.title} color="textSecondary" gutterBottom>
                     </Typography>
-                    <Typography variant="h5" component="h2">
+                    <Typography variant="h6" component="h4">
                         {location.place_name}
                     </Typography>
                     <Typography className={classes.pos} component="h6" color="textSecondary">

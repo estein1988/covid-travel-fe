@@ -64,9 +64,9 @@ export default function CountryCard({country, clickAction}) {
                 subheader={'Current Status: ' + country.current_status.charAt(0).toUpperCase() + country.current_status.slice(1)}
                 />
                 <CardMedia
-                className={classes.media}
-                image={country.country_flag}
-                title="Country Flag"
+                    className={classes.media}
+                    image={country.country_flag}
+                    title="Country Flag"
                 />
                 <CardContent>
                     <Typography variant="body1" color="textSecondary" component="p">

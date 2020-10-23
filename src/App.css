@@ -67,7 +67,28 @@
   padding: 0.5rem;
 }
 
-.high-hospitilized{
-  background: red;
-  color: white
+.low-positivity{
+  background: green;
+  color: white;
 }
+
+.high-hospitilized{
+  background: yellow;
+  color: black
+}
+
+.high-icu{
+  background: yellow;
+  color: black
+}
+
+.high-ventilator {
+  background: yellow;
+  color: black
+}
+
+.high-death{
+  background: red;
+  color: white;
+}
+
