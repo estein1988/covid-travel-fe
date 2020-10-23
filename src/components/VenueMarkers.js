@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import {Marker} from 'react-leaflet';
-import {VenueLocationIcon} from './VenueLocationIcon';
+import {VenueLocationIcon, RedLocationIcon} from './VenueLocationIcon';
 import MarkerPopup from './MarkerPopup'; 
 
 const VenueMarkers = (props) => {
@@ -9,7 +9,7 @@ const VenueMarkers = (props) => {
     <Marker 
         key={index} 
         position={country.lat_long} 
-        icon={VenueLocationIcon}
+        icon={country.current_status === 'closed' ? RedLocationIcon : VenueLocationIcon}
     >
         <MarkerPopup data={country}/>
     </Marker>

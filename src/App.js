@@ -91,6 +91,14 @@ class App extends Component {
 
         <Route exact path='/'>
           <h1 className="header-title">OpenCountries</h1>
+          <h3 className="sub-header">Travel the world safely during the Covid-19 Pandemic</h3>
+          <div className="header-button">
+            <button class="massive ui button">
+              <div className="header-link-text">
+                <Link className="header-link-text" to='/lat_long'>Start Exploring</Link>
+                </div>
+            </button>
+          </div>
           <img className="cover-photo" src={coverphoto} alt="" />
         </Route>
 
@@ -102,8 +110,8 @@ class App extends Component {
         </Route>
 
         <Route path='/lat_long'>
-          <MapView />
           <LatLongSearch />
+          <MapView />
         </Route>
 
         <Route path='/table'>

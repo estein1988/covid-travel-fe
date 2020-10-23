@@ -5,14 +5,33 @@
 .header-title{
   background-color: black;
   color: white;
-  font-size: 60px;
-  padding-top: 60px;
+  font-size: 70px;
+  padding-top: 20px;
   margin: 0px;
   font-family: 'Lato', sans-serif;
 }
 
+.sub-header{
+  background-color: black;
+  color: white;
+  font-size: 30px;
+  font-style: italic;
+  padding-top: 20px;
+  margin: 0px;
+  font-family: 'Lato', sans-serif;
+}
+
+.header-button{
+  background-color: black;
+  padding-top: 20px;
+}
+
+.header-link-text{
+  color: black
+}
+
 .cover-photo{
-  height: 680px;
+  height: 369px;
   width: 1500px;
 }
 
