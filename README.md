@@ -2,17 +2,17 @@
 
 OpenCountries is developed to give people informed, data-based decisions when deciding what countries they are permitted to travel to. Throughout 2020, the international travel have has had varying levels of restrictions. Additionally, countries are constantly changing their ingress/egress requirements based on local health officials advisement. I hope OpenCountries can show people the best way to book their upcoming travel abroad! 
 
-
-## Backend Repository
-https://github.com/estein1988/covid_travel_be
-
-## Demo Video
-[Demo Video](https://www.youtube.com/watch?v=EJxe8f53hs8&feature=youtu.be)
-
 ## Built With
 Frontend: React, React-Leaflet, Semantic UI, Material UI<br>
 Backend: Ruby 2.6.1 on Rails 6.0.3
 
+### Backend Repository
+https://github.com/estein1988/covid_travel_be
+
+### Demo Video
+[Demo Video](https://www.youtube.com/watch?v=EJxe8f53hs8&feature=youtu.be)
+
+### API Sources
 - API for Country restriction data: [Join Sherpa](https://docs.joinsherpa.io/)
 - API for United States statistics: [Covid Tracking Project](https://covidtracking.com/data/api)
 - API for case count by coordinates: [Smart Check Travel API](https://smartcheck.travel/)
