@@ -2,18 +2,21 @@
 
 OpenCountries is developed to give people informed, data-based decisions when deciding what countries they are permitted to travel to. Throughout 2020, the international travel have has had varying levels of restrictions. Additionally, countries are constantly changing their ingress/egress requirements based on local health officials advisement. I hope OpenCountries can show people the best way to book their upcoming travel abroad! 
 
-Backend repository: https://github.com/estein1988/covid_travel_be
-<br>[Demo Video](https://www.youtube.com/watch?v=EJxe8f53hs8&feature=youtu.be)
+
+## Backend Repository
+https://github.com/estein1988/covid_travel_be
+
+## Demo Video
+[Demo Video](https://www.youtube.com/watch?v=EJxe8f53hs8&feature=youtu.be)
 
 ## Built With
 Frontend: React, React-Leaflet, Semantic UI, Material UI<br>
 Backend: Ruby 2.6.1 on Rails 6.0.3
 
-API for Country restriction data: (https://docs.joinsherpa.io/)
-API for United States statistics: (http://covidtracking.com/api/us)
-API for case count by coordinates: (https://smartcheck.travel/api/v1/coordinate?lat=""&long=""&historic=false)
-API for GeoCode location search: https://api.mapbox.com/geocoding/v5/mapbox.places/"location".json?access_token={API_TOKEN}
-API for basemap layer: https://api.mapbox.com/styles/v1/estein1988/{id}/tiles/256/{z}/{x}/{y}@2x?access_token={API_KEY}
+- API for Country restriction data: [Join Sherpa](https://docs.joinsherpa.io/)
+- API for United States statistics: [Covid Tracking Project](https://covidtracking.com/data/api)
+- API for case count by coordinates: [Smart Check Travel API](https://smartcheck.travel/)
+- API for GeoCode location search and basemap: [Mapbox](https://docs.mapbox.com/api/search/)
 
 ## App Features
 
@@ -28,8 +31,6 @@ This page uses the same end-point from the map, but displays the data in the for
 
 ### Table Page
 The final page of the application shows United State Covid-statistics, from the initial onset of the pandemic (1/22/2020 - present). I believe the API endpoint (Covid-Tracking) updates daily early-afternoon when each state has submitted their statistics from the prior day. The table conditionally renders a green, yellow or red background on certain columns based on past results for the United States. 
-
-### Matching a Place & My Party screen
 
 
 ## Challenges
