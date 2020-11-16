@@ -6,10 +6,11 @@ import CardsContainer from './components/CardsContainer'
 import LatLongSearch from './components/LatLongSearch'
 import CityTable from './components/CityTable'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
-import './App.css';
 import {Link} from 'react-router-dom'
+import './App.css';
 import 'semantic-ui-css/semantic.min.css'
 import coverphoto from '../src/assets/coverphoto.jpg'
+
 class App extends Component {
   
   state = {
@@ -43,16 +44,16 @@ class App extends Component {
   }
 
   filterCountries = (userSearchInput) => {
-    const {searchName, searchStatus} = this.state
+    let {searchName, searchStatus} = this.state
 
-    const countriesFilter = this.state.countries.filter(
+    let countriesFilter = this.state.countries.filter(
       country => country.country_name.toLowerCase().includes(searchName.toLowerCase()) && country.current_status.toLowerCase().includes(searchStatus.toLowerCase()) 
     )
     this.setState({filteredCountries: countriesFilter})
   }
 
   captureSearchField = (event) => {
-    const {name, value} = event.target
+    let {name, value} = event.target
     this.setState({[name]: value})
   }
 
@@ -65,10 +66,8 @@ class App extends Component {
   render(){
     return (
       <Router>
-
         <div className="App">
-
-        <div className="ui inverted segment">
+        <div id="navBar" className="ui inverted segment">
           <div className="ui inverted secondary pointing menu">
             <div className="header item">
               <i className="home icon"></i>
@@ -90,16 +89,18 @@ class App extends Component {
         </div>
 
         <Route exact path='/'>
-          <h1 className="header-title">OpenCountries</h1>
-          <h3 className="sub-header">Travel the world safely during the Covid-19 Pandemic</h3>
+          <div>
+            <h1 className="header-title">OpenCountries</h1>
+            <h3 className="sub-header">Travel the world safely during the Covid-19 Pandemic</h3>
           <div className="header-button">
             <button class="massive ui button">
               <div className="header-link-text">
                 <Link className="header-link-text" to='/lat_long'>Start Exploring</Link>
-                </div>
+              </div>
             </button>
           </div>
-          <img className="cover-photo" src={coverphoto} alt="" />
+            <img className="cover-photo" src={coverphoto} alt="" />
+          </div>
         </Route>
 
         <Route exact path='/cards'>
@@ -119,7 +120,7 @@ class App extends Component {
         </Route>
 
       </div>
-
+      
       </Router>
     )
   }

@@ -23,15 +23,20 @@ https://github.com/estein1988/covid_travel_be
 ### GeoSearch
 Through a controlled form, the user can type in the field any location in the world. The field works for any city, address or location name (e.g. "Denver", "1600 Pennsylvania Washington D.C." or "Lost Lake"). The top 5 results from the user's search will render in a card format. The user can then take the coordinates returned from the card results and include them in the next controlled form (lookup current case count). The second form will return the current active Covid case in the that location's vicinity, and current tally of deaths reported. 
 
+![Alt Text](https://media.giphy.com/media/MbDkz9dqIaGAaL7Pz3/giphy.gif)
+
 ### Map Page
 The map page dynamically renders each country's placeholder from a lat/long array on the application's backend. Additionally, each placeholder is conditionally rendered based on the country's current "open status" (closed renders to a red icon and all other country's are blue). When the placeholder is clicked, additional information regarding the country's restrictions are displayed in a pop-up. 
 
 ### Country Cards
 This page uses the same end-point from the map, but displays the data in the form of cards (and shows a few more additional notes and requirements for each country). Two search fields are given, one which searches by Country Name and the other by Current Status (open, closed, mostly closed, etc.). Each country's avatar conditionally renders based on its status (green is open, red for all other countries). The user can toggle down each country's card to display additional info., and also add cards to the top of the page with favorite icon (each country card is only allowed to be added one-time).
 
+![Alt Text](https://media.giphy.com/media/ziIKEuUyBcvrh2aDXL/giphy.gif)
+
 ### Table Page
 The final page of the application shows United State Covid-statistics, from the initial onset of the pandemic (1/22/2020 - present). I believe the API endpoint (Covid-Tracking) updates daily early-afternoon when each state has submitted their statistics from the prior day. The table conditionally renders a green, yellow or red background on certain columns based on past results for the United States. 
 
+![Alt Text](https://media.giphy.com/media/asfdx1birEQ15QpdNU/giphy.gif)
 
 ## Challenges
 - Finding good, reliable data sources at no cost. There are many APIs out there which track travel restrictions, but most of them are very expensive ($999/month). All 5 APIs that I used were free. When first reviewing the primary API I was relying on (https://docs.joinsherpa.io/), the data looked perfect (exactly what I was seeking. When working with the data further, it seemed more apparent that it had not been updated in quite some time (3-4 months). I scoured for a backup source, but I couldn't find anyone offering the data for free. I reached out to several endpoint admin's and asked them if I could use the data for a only a school project and not deploy the app, but none were willing to provide.
