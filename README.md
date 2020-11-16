@@ -10,7 +10,7 @@ Backend: Ruby 2.6.1 on Rails 6.0.3
 https://github.com/estein1988/covid_travel_be
 
 ### Demo Video
-[Demo Video](https://www.youtube.com/watch?v=EJxe8f53hs8&feature=youtu.be)
+[Demo Video](https://www.youtube.com/watch?v=fEkAa672bLw)
 
 ### API Sources
 - API for Country restriction data: [Join Sherpa](https://docs.joinsherpa.io/)
@@ -27,6 +27,8 @@ Through a controlled form, the user can type in the field any location in the wo
 
 ### Map Page
 The map page dynamically renders each country's placeholder from a lat/long array on the application's backend. Additionally, each placeholder is conditionally rendered based on the country's current "open status" (closed renders to a red icon and all other country's are blue). When the placeholder is clicked, additional information regarding the country's restrictions are displayed in a pop-up. 
+
+![Alt Text](https://media.giphy.com/media/thaosvTCKkDMZBV2Fw/giphy.gif)
 
 ### Country Cards
 This page uses the same end-point from the map, but displays the data in the form of cards (and shows a few more additional notes and requirements for each country). Two search fields are given, one which searches by Country Name and the other by Current Status (open, closed, mostly closed, etc.). Each country's avatar conditionally renders based on its status (green is open, red for all other countries). The user can toggle down each country's card to display additional info., and also add cards to the top of the page with favorite icon (each country card is only allowed to be added one-time).
