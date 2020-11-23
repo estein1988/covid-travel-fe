@@ -22,7 +22,7 @@ class App extends Component {
   }
 
   componentDidMount(){
-    fetch('http://127.0.0.1:3000/travels')
+    fetch('https://open-countries.herokuapp.com/travels')
       .then(response => response.json())
       .then(countryData => {
         this.setState( {countries: countryData, filteredCountries: countryData} )
@@ -93,7 +93,7 @@ class App extends Component {
             <h1 className="header-title">OpenCountries</h1>
             <h3 className="sub-header">Travel the world safely during the Covid-19 Pandemic</h3>
           <div className="header-button">
-            <button class="massive ui button">
+            <button className="massive ui button">
               <div className="header-link-text">
                 <Link className="header-link-text" to='/lat_long'>Start Exploring</Link>
               </div>

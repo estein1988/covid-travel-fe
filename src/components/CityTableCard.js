@@ -5,7 +5,7 @@ class CityTableCard extends Component {
 
         return (
             <div>
-                <table class="ui sortable celled table">
+                <table className="ui sortable celled table">
                     <thead>
                         <tr>
                             <th>Date</th>

@@ -12,7 +12,7 @@ class MapView extends Component {
     }
 
     componentDidMount(){
-        fetch('http://127.0.0.1:3000/travels')
+        fetch('https://open-countries.herokuapp.com/travels')
         .then(response => response.json())
         .then(countryData => this.setState({countries: countryData}))
     }
