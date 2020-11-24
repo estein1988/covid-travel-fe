@@ -97,15 +97,15 @@ export default function CountryCard({country, clickAction}) {
                 </CardActions>
                 <Collapse in={expanded} timeout="auto" unmountOnExit>
                     <CardContent>
-                        <Typography variant="h5">Closed Exceptions:</Typography>
+                        <Typography variant="h6">Closed Exceptions:</Typography>
                         <Typography paragraph>
                             {country.closed_exceptions.join('; ')}
                         </Typography>
-                        <Typography variant="h5">Travel Requirements:</Typography>
+                        <Typography variant="h6">Travel Requirements:</Typography>
                         <Typography paragraph>
                             {country.international_travel_requirements.join('; ')}
                         </Typography>
-                        <Typography variant="h5">Travel Notes:</Typography>
+                        <Typography variant="h6">Travel Notes:</Typography>
                         <Typography paragraph>
                             {country.international_travel_note.join('; ')}
                         </Typography>
