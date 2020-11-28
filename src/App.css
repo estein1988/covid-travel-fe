@@ -4,13 +4,31 @@
 }
 
 #navBar {
-  margin: 10px;
+  margin: 0px;
+  background-color: black;
+}
+
+#header {
+  background: url('../src/assets/coverphoto.jpg') center center no-repeat;
+  background-size: cover;
+  height: 100%;
+  color: white;
+  padding-bottom: 70rem;
+  font-size: 20px;
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+.header-link-text {
+  color: black
 }
 
 .header-title {
   background-color: black;
   color: white;
-  font-size: 70px;
+  font-size: 52px;
+  font-weight: bold;
   margin: 0px;
   padding-top: 10px;
   font-family: 'Lato', sans-serif;
@@ -19,24 +37,15 @@
 .sub-header {
   background-color: black;
   color: white;
-  font-size: 30px;
+  font-size: 25px;
   font-style: italic;
-  margin: 0px;
+  margin: 10px;
   font-family: 'Lato', sans-serif;
 }
 
 .header-button {
   background-color: black;
   padding-top: 20px;
-}
-
-.header-link-text {
-  color: black
-}
-
-.cover-photo {
-  height: 100%;
-  width: 100%;
 }
 
 .leaflet-container { 
@@ -94,14 +103,16 @@
   align-items: center;
   margin: 1rem;
   padding: 0.5rem;
-  border: 1.75px solid black
+  border: 1.75px solid black;
+  background: whitesmoke;
 }
 
 .ui-centered-card {
-  background: lightgray
+  background: rgb(0, 0, 100);
+  color: whitesmoke
 }
 
-
+/*Table Page*/
 .low-positivity {
   background: green;
   color: white;

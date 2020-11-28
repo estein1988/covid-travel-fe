@@ -6,13 +6,13 @@ import MarkerPopup from './MarkerPopup';
 const VenueMarkers = (props) => {
     const { countries } = props;
     const markers = countries.map((country, index) => (
-    <Marker 
-        key={index} 
-        position={country.lat_long} 
-        icon={country.current_status === 'closed' ? RedLocationIcon : VenueLocationIcon}
-    >
-        <MarkerPopup data={country}/>
-    </Marker>
+        <Marker 
+            key={index} 
+            position={country.lat_long} 
+            icon={country.current_status === 'closed' ? RedLocationIcon : VenueLocationIcon}
+        >
+            <MarkerPopup data={country}/>
+        </Marker>
     )) 
     return <Fragment>{markers}</Fragment>
 }

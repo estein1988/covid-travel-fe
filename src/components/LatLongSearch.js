@@ -56,14 +56,15 @@ class LatLongSearch extends Component {
 
     render(){
     const renderCoodinateResults = () => this.state.geoCodeCoorindates.map(location => 
-    <GeoCard
-        key={location.id}
-        location={location}
-    />
+        <GeoCard
+            key={location.id}
+            location={location}
+        />
     )
 
         return (
             <div>
+
                 <div class="ui two column centered grid">
                     <div className="LatLongSearch">        
                         <form className="ui form" onSubmit={this.handleSubmit}> 
@@ -75,7 +76,9 @@ class LatLongSearch extends Component {
                         </form>
                     </div>
                 </div>
+
                 {renderCoodinateResults()}
+
                 <div class="ui two column centered grid">
                     <div className="LatLongSearch">        
                         <form className="ui form" onSubmit={this.handleSubmit}>
@@ -91,8 +94,10 @@ class LatLongSearch extends Component {
                         </form>
                     </div>
                 </div>
+                
                 <h2>Current Active Cases: {this.state.covid.active}</h2> 
                 <h2>Current Deaths Reported: {this.state.covid.deaths}</h2> 
+
             </div>
         )
     }

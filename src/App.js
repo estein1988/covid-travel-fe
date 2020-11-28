@@ -9,7 +9,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom'
 import {Link} from 'react-router-dom'
 import './App.css';
 import 'semantic-ui-css/semantic.min.css'
-import coverphoto from '../src/assets/coverphoto.jpg'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
   
@@ -89,18 +89,23 @@ class App extends Component {
         </div>
 
         <Route exact path='/'>
-          <div>
-            <h1 className="header-title">OpenCountries</h1>
-            <h3 className="sub-header">Travel the world safely during the Covid-19 Pandemic</h3>
-          <div className="header-button">
-            <button className="massive ui button">
-              <div className="header-link-text">
-                <Link className="header-link-text" to='/lat_long'>Start Exploring</Link>
+          <section id="header">
+            <div className="container">
+              <div className="row justify-content-center">
+                <div className="col-md-6">
+                  <h2 className="header-title">OpenCountries</h2>
+                  <p className="sub-header">Travel the world safely during the Covid-19 Pandemic</p>
+                  <div className="header-button">
+                    <button className="massive ui button">
+                      <div className="header-link-text">
+                        <Link className="header-link-text" to='/lat_long'>Start Exploring</Link>
+                      </div>
+                    </button>
+                  </div>
+                </div>
               </div>
-            </button>
-          </div>
-            <img className="cover-photo" src={coverphoto} alt="" />
-          </div>
+            </div>
+          </section>
         </Route>
 
         <Route exact path='/cards'>

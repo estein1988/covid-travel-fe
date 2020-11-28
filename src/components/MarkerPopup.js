@@ -4,14 +4,12 @@ import {Popup} from 'react-leaflet';
 const MarkerPopup = ({data}) => {
     return  (
     <Popup>
-        <div className='poup-text'>
+        <div className='popup-text'>
             <h2>{data.country_name}</h2>
             <h4>Current Status: {data.current_status.charAt(0).toUpperCase() + data.current_status.slice(1)}</h4>
-            <h5>Days Required To Quarantine: {data.days_to_quarantine}</h5>
-            <h5>{(data.closed_exceptions === '')
-                ? 'there are no closed exceptions'
-                : 'Exceptions: ' + data.closed_exceptions.join('; ')}
-            </h5>
+            <p>{data.days_to_quarantine} days required to quarantine</p>
+            <p>Exceptions: {data.closed_exceptions.join('; ')}</p>
+            <p>Notes: {data.international_travel_note}</p>
         </div>
     </Popup>
     )

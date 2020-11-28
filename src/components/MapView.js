@@ -13,8 +13,8 @@ class MapView extends Component {
 
     componentDidMount(){
         fetch('https://open-countries.herokuapp.com/travels')
-        .then(response => response.json())
-        .then(countryData => this.setState({countries: countryData}))
+            .then(response => response.json())
+            .then(countryData => this.setState({countries: countryData}))
     }
 
     render() {
