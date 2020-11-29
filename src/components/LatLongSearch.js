@@ -95,8 +95,8 @@ class LatLongSearch extends Component {
                     </div>
                 </div>
                 
-                <h2>Current Active Cases: {this.state.covid.active}</h2> 
-                <h2>Current Deaths Reported: {this.state.covid.deaths}</h2> 
+                <h3 id="current-active-cases">Current Active Cases: {this.state.covid.active}</h3> 
+                <h3>Current Deaths Reported: {this.state.covid.deaths}</h3> 
 
             </div>
         )

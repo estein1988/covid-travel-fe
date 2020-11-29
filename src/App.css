@@ -112,6 +112,10 @@
   color: whitesmoke
 }
 
+#current-active-cases{
+  padding: 0.75rem;
+}
+
 /*Table Page*/
 .low-positivity {
   background: green;
