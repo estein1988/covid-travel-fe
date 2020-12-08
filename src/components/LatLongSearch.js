@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import 'semantic-ui-css/semantic.min.css'
 import GeoCard from '../components/GeoCard.js'
+import ButtonLoader from '../components/ButtonLoader'
+import 'semantic-ui-css/semantic.min.css'
 
 const username = 'ameer_30';
 const password = '074e91-d5c615-c9516c-11c532-9aa562';
@@ -97,6 +98,8 @@ class LatLongSearch extends Component {
                 
                 <h3 id="current-active-cases">Current Active Cases: {this.state.covid.active}</h3> 
                 <h3>Current Deaths Reported: {this.state.covid.deaths}</h3> 
+
+                <ButtonLoader />
 
             </div>
         )

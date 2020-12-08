@@ -96,7 +96,7 @@ class App extends Component {
                   <h2 className="header-title">OpenCountries</h2>
                   <p className="sub-header">Travel the world safely during the Covid-19 Pandemic</p>
                   <div className="header-button">
-                    <button className="massive ui button">
+                    <button className="massive ui button" onClick={this.fetchData}>
                       <div className="header-link-text">
                         <Link className="header-link-text" to='/lat_long'>Start Exploring</Link>
                       </div>
