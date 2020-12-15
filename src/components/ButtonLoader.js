@@ -11,7 +11,7 @@ export default class ButtonLoader extends Component {
 
         setTimeout(() => {
             this.setState({ loading: false });
-        }, 5000);
+        }, 12000);
 
     };
 
