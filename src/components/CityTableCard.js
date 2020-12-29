@@ -25,12 +25,12 @@ class CityTableCard extends Component {
                             <td>
                                 {this.props.data.date.toString().replace(/\B(?=(\d{4})+(?!\d))/g, "-")}
                             </td>
-                            <td>
+                            {/* <td>
                                 {this.props.data.positive.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-                            </td>
-                            <td>
+                            </td> */}
+                            {/* <td>
                                 {this.props.data.negative.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-                            </td>
+                            </td> */}
                             <td className={(this.props.data.positive / this.props.data.negative) < .08
                                 ? 'low-positivity'
                                 : 'high-positivity'
