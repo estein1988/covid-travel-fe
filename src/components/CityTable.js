@@ -19,7 +19,7 @@ class CityTable extends Component {
 
     showCovidData = () => this.state.covidData.map(data => 
         <CityTableCard 
-            key={data.id} 
+            key={data.date} 
             data={data}
         />
     )
