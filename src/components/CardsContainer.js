@@ -1,15 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
 import CountryCard from '../components/CountryCard'
 
-class CardsContainer extends Component {
-
-    render() {
-    const renderCountries = () => this.props.allCountries.map(
+function CardsContainer({allCountries, clickAction, filterCountries}) {
+    
+    const renderCountries = () => allCountries.map(
         country => <CountryCard
             key={country.id}
             country={country}
-            clickAction={this.props.clickAction}
-            filter={this.props.filterCountries}
+            clickAction={clickAction}
+            filter={filterCountries}
         />
     )
 
@@ -18,7 +17,6 @@ class CardsContainer extends Component {
                 {renderCountries()}
             </div>
         )
-    }
 }
 
 export default CardsContainer;

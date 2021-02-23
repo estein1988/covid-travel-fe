@@ -3,8 +3,7 @@ import {Marker} from 'react-leaflet';
 import {VenueLocationIcon, RedLocationIcon} from './VenueLocationIcon';
 import MarkerPopup from './MarkerPopup'; 
 
-const VenueMarkers = (props) => {
-    const { countries } = props;
+const VenueMarkers = ({countries}) => {
     const markers = countries.map((country, index) => (
         <Marker 
             key={index} 
@@ -14,7 +13,10 @@ const VenueMarkers = (props) => {
             <MarkerPopup data={country}/>
         </Marker>
     )) 
-    return <Fragment>{markers}</Fragment>
+
+    return ( 
+        <Fragment>{markers}</Fragment>
+    )
 }
-    
+
 export default VenueMarkers;

@@ -1,37 +1,28 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import CityTableCard from '../components/CityTableCard'
-class CityTable extends Component {
 
-    state = {
-        covidData: []
-    }
+function CityTable() {
+    const [covidData, setCovidData] = useState([])
 
-    componentDidMount(){
-        this.getCovidData()
-    }
-
-    getCovidData = () => {
-        const url = 'https://api.covidtracking.com/v1/us/daily.json'
-        fetch(url)
+    useEffect(() => {
+        fetch('https://api.covidtracking.com/v1/us/daily.json')
             .then(response => response.json())
-            .then(data => this.setState({covidData: data}))
-    }
+            .then(result => setCovidData(result))
+    }, [])
 
-    showCovidData = () => this.state.covidData.map(data => 
+    const showCovidData = () => covidData.map(data => 
         <CityTableCard 
             key={data.date} 
             data={data}
         />
     )
 
-    render(){
-        return (
-            <div>
-                <h1>United Stats Covid Statistics</h1>
-                {this.showCovidData()}
-            </div>
-        )
-    }
+    return (
+        <div>
+            <h1>United Stats Covid Statistics</h1>
+            {showCovidData()}
+        </div>
+    )
 }
 
 export default CityTable;

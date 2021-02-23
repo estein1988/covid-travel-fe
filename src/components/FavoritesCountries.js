@@ -1,16 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
 import CountryCard from "../components/CountryCard";
 import 'semantic-ui-css/semantic.min.css'
 
-class FavoritesCountries extends Component {
+function FavoritesCountries({favoritesCountries, clickAction}) {
 
-    render() {
-
-    const renderFavoritesCountries = () => this.props.favoritesCountries.map(
+    const renderFavoritesCountries = () => favoritesCountries.map(
         country => <CountryCard
             key={country.id}
             country={country}
-            clickAction={this.props.clickAction}
+            clickAction={clickAction}
         />
     )
         return (
@@ -22,7 +20,6 @@ class FavoritesCountries extends Component {
                 </div>
             </div>
         )
-    }
 }
 
 export default FavoritesCountries;
